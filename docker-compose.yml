@@ -1,0 +1,21 @@
+app:
+  build: .
+  ports:
+    - "23:22"
+    - "81:80"
+  links:
+    - db:db
+  volumes:
+    - osqa-dbpedia:/osqa/
+  environment:
+    DB_INIT_DELAY: 8
+  privileged: true  
+  command: django
+
+db:
+  image: mysql:5.5
+  environment:
+    MYSQL_ROOT_PASSWORD: rubchack
+    MYSQL_DATABASE: osqa
+    MYSQL_USER: osqa
+    MYSQL_PASSWORD: wrooble
