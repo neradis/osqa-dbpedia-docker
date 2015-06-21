@@ -1,0 +1,3 @@
+[submodule "osqa-dbpedia"]
+	path = osqa-dbpedia
+	url = https://github.com/neradis/osqa-dbpedia.git
