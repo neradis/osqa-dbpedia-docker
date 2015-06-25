@@ -30,6 +30,9 @@ elif [ "$1" = 'apache' ]; then
   a2enmod wsgi
   a2dissite 000-default
   a2ensite osqa-dbpedia
+  chown -R osqa:www-data /var/www/osqa
+  chmod -R g+w /var/www/osqa/forum/upfiles
+  chmod -R g+w /var/www/osqa/log
   service apache2 start
   exit
 elif [ "$1" = 'sshd' ]; then
