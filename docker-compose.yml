@@ -10,7 +10,7 @@ app:
   environment:
     DB_INIT_DELAY: 8
   privileged: true  
-  command: django
+  command: apache
 
 db:
   image: mysql:5.5
