@@ -33,6 +33,8 @@ elif [ "$1" = 'apache' ]; then
   chown -R root:www-data /osqa
   chmod -R g+w /osqa/forum/upfiles
   chmod -R g+w /osqa/log
+  mkdir /empty
+  chown -R root:www-data /empty
   service apache2 start
   exec tail -fn10000 /var/log/apache2/*
 elif [ "$1" = 'sshd' ]; then
